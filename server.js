@@ -8,7 +8,11 @@ dotenv.config();
 const app = express();
 app.use(
   cors({
-    origin: ["http://127.0.0.1:5500", "http://localhost:5500"],
+    origin: [
+      "http://localhost:3000", // local testing
+      "http://127.0.0.1:5500", // local Live Server
+      "https://jade-quokka-01a304.netlify.app" // ✅ your live frontend
+    ],
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
   })
