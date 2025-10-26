@@ -22,6 +22,10 @@ app.use(express.json());
 // Use your SECRET KEY here (not the publishable one!)
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY); // e.g. sk_test_...
 
+app.get("/", (req, res) => {
+  res.send("Hello, Stripe!");
+});
+
 // Create payment intent endpoint
 app.post("/create-payment-intent", async (req, res) => {
   try {
